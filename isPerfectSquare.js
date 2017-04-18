@@ -24,3 +24,26 @@ var isSquare = function(target){
     // no matching number could be squared
     return false;
 }
+
+//OTHER VARIATIONS//
+function isSquare(n) {
+  return Math.sqrt(n) % 1 === 0;
+}
+
+var isSquare = function(n){
+  return Number.isInteger(Math.sqrt(n));
+}
+
+var isSquare = function(n){
+  n = Math.sqrt(n);
+  return ~~n === n;
+}
+
+var isSquare = function(n){
+  return Math.sqrt(n) % 1 === 0 ? true : false;
+};
+
+var isSquare = function(n){
+  if (n < 0 ) return false
+  return Math.sqrt(n) % 1 === 0 ? true : false;
+}
