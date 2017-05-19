@@ -1,0 +1,40 @@
+//NOT DONE
+var sum_pairs=function(ints, s){
+  var i, o, length = ints.length, sum = 0, pairs = [], p = {index, value}, p1 = new p(), p2 = new p();
+    for (i = 0; i < length; i++) {
+      p1.value = ints[i];
+      p1.index = i;
+      for (o = 0; o < length; o++) {
+        p2.value = ints[o];
+        p2.index = o;
+        sum = p1.value + p2.value;
+        if (sum === s)
+          pairs.push([p1, p2]);
+        console.log(p1.value + "(" + p1.index + ")" + " + " + p2.value + "(" + p2.index + ")");
+    }
+    console.log(pairs);
+  }
+}
+
+http://stackoverflow.com/questions/11773225/push-data-into-an-array-with-pair-values
+
+sum_pairs([11, 3, 7, 5],         10)
+#              ^--^      3 + 7 = 10
+== [3, 7]
+
+sum_pairs([4, 3, 2, 3, 4],         6)
+#          ^-----^         4 + 2 = 6, indices: 0, 2 *
+#             ^-----^      3 + 3 = 6, indices: 1, 3
+#                ^-----^   2 + 4 = 6, indices: 2, 4
+#  * entire pair is earlier, and therefore is the correct answer
+== [4, 2]
+
+sum_pairs([0, 0, -2, 3], 2)
+#  there are no pairs of values that can be added to produce 2.
+== None/nil/undefined (Based on the language)
+
+sum_pairs([10, 5, 2, 3, 7, 5],         10)
+#              ^-----------^   5 + 5 = 10, indices: 1, 5
+#                    ^--^      3 + 7 = 10, indices: 3, 4 *
+#  * entire pair is earlier, and therefore is the correct answer
+== [3, 7]
