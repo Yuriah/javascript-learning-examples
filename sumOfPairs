@@ -17,6 +17,7 @@ var sum_pairs=function(ints, s){
 }
 
 http://stackoverflow.com/questions/11773225/push-data-into-an-array-with-pair-values
+https://www.codewars.com/kata/54d81488b981293527000c8f/train/javascript
 
 sum_pairs([11, 3, 7, 5],         10)
 #              ^--^      3 + 7 = 10
