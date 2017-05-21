@@ -1,0 +1,45 @@
+function playPass(s, n) {
+  return s
+    .replace(/[A-Z]/g, function(char) {
+      return String.fromCharCode((char.charCodeAt(0) - 65 + n) % 26 + 65);
+    })
+    .replace(/[a-z]/g, function(char) {
+      return String.fromCharCode((char.charCodeAt(0) - 97 + n) % 26 + 97);
+    })
+    .replace(/\d/g, function(digit) { 
+      return 9 - digit; 
+    })
+    .replace(/(.)(.?)/g, function(match, odd, even) {
+      return odd.toUpperCase() + even.toLowerCase();
+    })
+    .split('').reverse().join('');
+}
+
+//OTHER VARIATIONS
+const playPass = (s, n) => s.split("").map((letter, index) => 
+  {
+    var digit = parseInt(letter);
+    if (!isNaN(digit)){
+      return 9 - digit;
+    }
+    var charCode = letter.charCodeAt() - 65;
+    if ((charCode >= 0) && (charCode < 26)){
+      charCode += n;
+      letter = String.fromCharCode(charCode % 26 + 65);
+      if (index % 2 == 1){
+        letter = letter.toLowerCase();
+      }
+    }
+    return letter;
+  }).reverse().join("");
+  
+  //OTHER VARIATIONS
+  var lib = 'abcdefghijklmnopqrstuvwxyz'.split('');
+function playPass(s, n) {
+  var shifted = lib.slice(n).concat(lib.slice(0, n));
+  return s.toLowerCase().split('').map((c, i) => {
+    if(lib.indexOf(c) > -1) return r = shifted[lib.indexOf(c)], i % 2 == 0 ? r.toUpperCase() : r;
+    if(/\d/.test(c)) return 9 - parseInt(c);
+    return c;
+  }).reverse().join('');
+}
