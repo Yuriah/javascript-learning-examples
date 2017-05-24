@@ -1,4 +1,6 @@
 
+  https://mgechev.github.io/javascript-algorithms/searching_maximum-subarray.js.html <-- GOOD Algorithm website
+  
   /**
    * Finds the maximum sum of the elements of a subarray in a given array
    * using the Kadane's algorithm.
