@@ -57,3 +57,15 @@ var maxSequence = function(arr){
   });
   return max;
 }
+
+//OTHER VARIATIONS
+var maxSequence = function(arr){
+      var max = 0;
+      for (var i = 0; i < arr.length; i++) {
+        for (var j = arr.length; j > i; j--) {
+          var total = arr.slice(i,j).reduce(function(a, b){ return a + b; });
+          if (max < total) max = total
+        }
+      }
+      return max;
+    }
