@@ -1,20 +1,28 @@
 var Vector = function (components) {
   // TODO: Finish the Vector class.
-  this.add = function(v) {
-    var i = 0;
-    return function(a) {
-      return v[i] + a[i] ? i++ : v;
+  	var self = this;
+	this.components = components;
+    
+    this.toString = function() {
+    	return "(" + self.components.join(",") + ")";
     }
-    this.add().equals() = function(obj) {
-    return typeof obj === this ? function(l) {
-      for (var i = 0; i < obj.length; i++)
-        if (obj[i] === l[i])
-          return true;
-        return false;
-    } : obj;
+    this.equal = function(vector) {
+    	return self.components.toString() === vector.components.toString();
     }
-  }
+	this.add = function(vector) {
+    	var total = [];
+    	for (var i = 0, length = self.components.length; i < length; i++) {
+        	total.push(components[i] + vector[i]);
+		}
+        return new Vector(total).toString();
+	}
 };
+
+var a = new Vector([1,2,3]);
+var b = new Vector([2,4,6]);
+var c = new Vector([4,6,8]);
+document.getElementById().getInnerHTML().//COTINUE
+console.log(a.add(b));
 
 Create a Vector object that supports addition, subtraction, dot products, and norms. So, for example:
 
