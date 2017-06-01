@@ -1,0 +1,13 @@
+function generateHashtag (str) {
+  var length = str.length, result = ["#"], max = 140, split = str.split(" ");
+  
+  if (length > max || length < 1 || str == null)
+    return false;
+  
+  for (var i = 0; i < split.length; i++) {
+    var s = split[i].charAt(0).toUpperCase() + split[i].slice(1);
+    result.push(s);
+  }
+
+  return result.join("");
+}
