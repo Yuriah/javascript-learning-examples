@@ -4,3 +4,5 @@ Javascript go-to repository to preview examples and/or methods. Anything Javascr
 # References
 Array Map() and Reduce() functions
 https://www.sitepoint.com/map-reduce-functional-javascript/
+Momoization
+https://en.wikipedia.org/wiki/Memoization
