@@ -1,0 +1,72 @@
+//MY EXAMPLE - UNFINISHED [Needs to handle uppercase letters.]
+function rot13(str) {
+  var splitWords = str.split(" "), newWord = [];
+  for (var i = 0; i < splitWords.length; i++) {
+    newWord.push(shiftWord(splitWords[i]));
+  }
+  
+  return newWord.join(" ");
+}
+
+function shiftWord(word) {
+  var splitWord = word.split(""), shifted = [];
+  for (var i = 0; i < word.length; i++) {
+    shifted.push(shiftLetter(splitWord[i]));
+  }
+  return shifted.join("");
+}
+
+function shiftLetter(letter) {
+  var alphabet = "abcdefghijklmnopqrstuvwxyz", index = -1, shiftTotal = 0, shift = 13, dif = -1;
+
+  for (var i = -1; i < alphabet.length; i++) {
+    if (letter == alphabet[i]) {
+      index = i;
+    }
+  }
+  
+  shiftTotal = shift + index;
+  
+  if (shiftTotal >= 26) {
+    dif = shiftTotal - alphabet.length;
+  }
+  
+  if (index < 0)
+    return letter;
+  
+  if (dif > -1) {
+    return alphabet[dif];
+    } else
+    return alphabet[shiftTotal];
+}
+
+//OTHER VARIATIONS - by Stuhl [Needs to handle special characters and spaces]
+function rot13(str) {
+  // splitting the string up into an array, because of the map function
+  // (it only accepts arrays)
+  let strArr = str.split("");
+  
+  let storeArr = strArr.map(function(val) {
+    
+    // some variables for shorter code in if conditions
+    let charCode = val.charCodeAt();
+    let toChar = String.fromCharCode;
+    
+    // conditions similar to ur code, except only in 1 function total
+    // Map is basically the same as a for loop, so you can use that too
+    if (charCode >= 65 && charCode <= 77) {
+      return toChar(charCode + 13);
+    } else if (charCode >= 78 && charCode <= 90) {
+      return toChar(charCode - 13);
+    } else if (charCode >= 97 && charCode <= 109) {
+      return toChar(charCode + 13);
+    } else {
+      return toChar(charCode - 13);
+    }
+  })
+  
+  // return the result
+  return storeArr.join("");
+}
+
+console.log(rot13("thisShouldWork"));
