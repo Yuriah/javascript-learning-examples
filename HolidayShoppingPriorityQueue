@@ -37,8 +37,8 @@ function buyGift() {
   let giftName = arrObj[0] !== undefined ? arrObj[0].gift : "Error! Your shopping card is empty.";
   
   
-  arrObj.shift();                                 // Above ternary is pretty easy: If arrObj is not empty, giftName = the gifts name (e.g 1080 ti)
-  return giftName;                                // else giftName = "Error! Your shopping card is empty."
+  arrObj.shift();              // Above ternary is pretty easy: If arrObj is not empty, giftName = the gifts name (e.g 1080 ti)
+  return giftName;             // else giftName = "Error! Your shopping card is empty."
 }
 
 console.log(addGift({gift: "toy", priority: 5}));         // --> 1 (returns the length of the array)
