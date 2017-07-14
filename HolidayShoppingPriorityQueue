@@ -23,9 +23,9 @@ HolidayPriorityQueue.prototype.buyGift = function(){
 }
 
 //OTHER VARIATIONS - Creditz to Stuhl
-let arrObj = [];                            // Store the shopping card
+let arrObj = [];                            
 
-function addGift(obj) {                     // add items
+function addGift(obj) {                     
   arrObj.push(obj);                  
   arrObj.sort(function(a, b) {              // sort the gifts from low to high priority
     return a.priority - b.priority;
@@ -33,14 +33,13 @@ function addGift(obj) {                     // add items
   return arrObj.length;
 }
 
-function buyGift() {                        // Buy(remove) gifts
+function buyGift() {                        
   let giftName = arrObj[0] !== undefined ? arrObj[0].gift : "Error! Your shopping card is empty.";
   
   
   arrObj.shift();                                 // Above ternary is pretty easy: If arrObj is not empty, giftName = the gifts name (e.g 1080 ti)
   return giftName;                                // else giftName = "Error! Your shopping card is empty."
 }
-
 
 console.log(addGift({gift: "toy", priority: 5}));               // Add gifts
 console.log(addGift({gift: "1080 ti", priority: 1}));
