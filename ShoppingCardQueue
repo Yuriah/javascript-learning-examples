@@ -1,0 +1,48 @@
+//Yuriah
+function HolidayPriorityQueue(){
+  this.gifts = [];
+}
+
+HolidayPriorityQueue.prototype.addGift = function(gift){
+    var priority = gift.priority;
+    var giftArrayLength = this.gifts.length;
+    this.gifts.push(gift);
+    this.gifts.sort(function(a, b) {//Thanks Stuhl
+      return a.priority - b.priority;
+    })
+  return this.gifts.length;
+}
+
+HolidayPriorityQueue.prototype.buyGift = function(){
+  if (this.gifts.length == 0) {
+    return '';
+  }
+  
+  let giftName = this.gifts.shift();
+  return giftName.gift;
+}
+
+//OTHER VARIATIONS
+let arrObj = [];
+
+function addGift(obj) {
+  arrObj.push(obj);
+   arrObj.sort(function(a, b) {
+    return a.priority - b.priority;
+  })
+  return arrObj.length;
+}
+
+function buyGift() {
+  let giftName = arrObj[0].gift;
+  arrObj.shift();
+  return giftName;
+}
+
+
+console.log(addGift({gift: "toy", priority: 5}));
+console.log(addGift({gift: "1080 ti", priority: 1}));
+
+
+console.log(buyGift());
+console.log(arrObj);
