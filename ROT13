@@ -41,10 +41,16 @@ function shiftLetter(letter) {
     return alphabet[shiftTotal];
 }
 
+
+//OTHER VARIATIONS - by Stuhl [Needs to handle special characters and spaces] !UPDATE! - Works now with special characters too
+function rot13(str) {
+  // Splitting str into an array because the .map only accepts arrays
+
 //OTHER VARIATIONS - by Stuhl [Needs to handle special characters and spaces]
 function rot13(str) {
   // splitting the string up into an array, because of the map function
   // (it only accepts arrays)
+
   let strArr = str.split("");
   
   let storeArr = strArr.map(function(val) {
@@ -53,6 +59,16 @@ function rot13(str) {
     let charCode = val.charCodeAt();
     let toChar = String.fromCharCode;
     
+    if (charCode >= 65 && charCode <= 77) {             // Check from A-M
+      return toChar(charCode + 13);
+    } else if (charCode >= 78 && charCode <= 90) {      // Check from N-Z
+      return toChar(charCode - 13);
+    } else if (charCode >= 97 && charCode <= 109) {     // Check from a-m
+      return toChar(charCode + 13);
+    } else if (charCode >= 110 && charCode <= 122) {    // Check from n-z
+      return toChar(charCode - 13);
+    } else {                                            // Check rest and return the same (e.g # is #);
+      return val;
     // conditions similar to ur code, except only in 1 function total
     // Map is basically the same as a for loop, so you can use that too
     if (charCode >= 65 && charCode <= 77) {
@@ -63,10 +79,16 @@ function rot13(str) {
       return toChar(charCode + 13);
     } else {
       return toChar(charCode - 13);
+
     }
   })
   
   // return the result
+  return storeArr.join("")
+}
+
+console.log(rot13("Hey buddy this sh#t works now ^^"));
+
   return storeArr.join("");
 }
 
