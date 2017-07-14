@@ -1,11 +1,15 @@
 //Yuriah
-function HolidayPriorityQueue(){
-  this.gifts = [];
+function HolidayPriorityQueue(){//Techinically its just a function, but it will become an Object. We give it an array gifts[]
+  this.gifts = [];//Creates an array inside the Object
+  //this reffers to the instance of the object
+  //var obj1 = new HolidayPriorityQueue(); //same constructor, but its a differente instance. If I edit obj1, it wont affect obj2, or the HolidayPriorityQueue() constructor
+  //var obj2 = new HolidayPriorityQueue();
 }
 
+//Adds the addGift method to our Object HolidayPriorityQueue() with 1 parameter (gift);
 HolidayPriorityQueue.prototype.addGift = function(gift){
     var priority = gift.priority;
-    var giftArrayLength = this.gifts.length;
+    var giftArrayLength = this.gifts.length;//Again, this reffers to the current instance of the object. So its own length from our gifts[] array
     this.gifts.push(gift);
     this.gifts.sort(function(a, b) {//Thanks Stuhl
       return a.priority - b.priority;
