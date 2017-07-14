@@ -41,9 +41,9 @@ function buyGift() {
   return giftName;                                // else giftName = "Error! Your shopping card is empty."
 }
 
-console.log(addGift({gift: "toy", priority: 5}));         // Add gifts
-console.log(addGift({gift: "1080 ti", priority: 1}));
+console.log(addGift({gift: "toy", priority: 5}));         // --> 1 (returns the length of the array)
+console.log(addGift({gift: "1080 ti", priority: 1}));     // --> 2
 
-console.log(buyGift());     // Buy gifts                  
-console.log(buyGift());
-console.log(buyGift());
+console.log(buyGift());     // --> 1080 ti               
+console.log(buyGift());     // --> toy
+console.log(buyGift());     // --> Error! Your shopping card is empty.
