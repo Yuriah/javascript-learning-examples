@@ -27,7 +27,7 @@ let arrObj = [];
 
 function addGift(obj) {                     
   arrObj.push(obj);                  
-  arrObj.sort(function(a, b) {         // sort the gifts from low to high priority
+  arrObj.sort(function(a, b) {         // sort the gifts from low to high priority (smaller numbers have higher priority)
     return a.priority - b.priority;
   })
   return arrObj.length;
