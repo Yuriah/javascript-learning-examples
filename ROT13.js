@@ -42,15 +42,13 @@ function shiftLetter(letter) {
 }
 
 
-//OTHER VARIATIONS - by Stuhl [Needs to handle special characters and spaces] !UPDATE! - Works now with special characters too
+//OTHER VARIATIONS - Stuhl
 function rot13(str) {
-  // Splitting str into an array because the .map only accepts arrays
-  let strArr = str.split("");
+  let strArr = str.split("");             // Splitting str into an array because the .map only accepts arrays
   
   let storeArr = strArr.map(function(val) {
     
-    // some variables for shorter code in if conditions
-    let charCode = val.charCodeAt();
+    let charCode = val.charCodeAt();          // some variables for shorter code in if conditions
     let toChar = String.fromCharCode;
     
     if (charCode >= 65 && charCode <= 77) {             // Check from A-M
@@ -63,22 +61,10 @@ function rot13(str) {
       return toChar(charCode - 13);
     } else {                                            // Check rest and return the same (e.g # is #);
       return val;
-    // conditions similar to ur code, except only in 1 function total
     // Map is basically the same as a for loop, so you can use that too
-    if (charCode >= 65 && charCode <= 77) {
-      return toChar(charCode + 13);
-    } else if (charCode >= 78 && charCode <= 90) {
-      return toChar(charCode - 13);
-    } else if (charCode >= 97 && charCode <= 109) {
-      return toChar(charCode + 13);
-    } else {
-      return toChar(charCode - 13);
-
     }
-  })
   
-  // return the result
-  return storeArr.join("")
+  return storeArr.join("")    // return the result
 }
 
 console.log(rot13("Hey buddy this sh#t works now ^^"));
