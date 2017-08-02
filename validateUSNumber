@@ -1,0 +1,5 @@
+https://www.gorkahernandez.com/blog/validate-us-telephone-numbers-free-code-camp/
+
+function telephoneCheck(str) {
+    return /^1? ?(\d{3}|\(\d{3}\))[ -]?\d{3}[ -]?\d{4}$/.test(str);
+}
