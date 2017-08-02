@@ -1,0 +1,33 @@
+[PRODUCES NEW ARRAY]
+Array.reduce(function(previousVal, currentVal) {
+  return previousVal - currentVal;
+},0);
+//Will iterate through an array subtracting all values.
+//Second parameter is used to set the initial value of the counter.
+
+[PRODUCES NEW ARRAY]
+Array.filter(function(val) {
+  return val < 4;
+});
+//Will iterate through an array filtering off all the values that are equal to false.
+//Returns: All values that are less than 4 are removed.
+
+[PRODUCES NEW ARRAY]
+var newArray[];
+newArray = oldArray.concat(otherArray);
+//Concat takes an array as an argument and returns a new array with the elements of this array concatenated onto the end.
+
+[ALTERS ARRAY IN PLACE]
+var array = [1, 12, 21, 2];
+array.sort(function(a, b) {
+  return a - b;
+});
+//To easily sort the values in an array alphabetically or numerically.
+//If no compare (callback) function is passed in, it will convert the values to strings and sort alphabetically.
+//Will sort the elements from smallest to largest number.
+
+[ALTERS ARRAY IN PLACE]
+var myArray = [1, 2, 3];
+myArray.reverse();
+//Will return the reversed array: [3, 2, 1]
+//
