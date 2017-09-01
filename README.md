@@ -6,3 +6,5 @@ Array Map() and Reduce() functions
 https://www.sitepoint.com/map-reduce-functional-javascript/
 Momoization
 https://en.wikipedia.org/wiki/Memoization
+
+https://code.tutsplus.com/tutorials/build-your-first-javascript-library--net-26796
