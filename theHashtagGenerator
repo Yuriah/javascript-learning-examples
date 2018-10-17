@@ -1,3 +1,5 @@
+// Yuriah 
+
 function generateHashtag (str) {
   var length = str.length, result = ["#"], max = 140, split = str.split(" ");
   
@@ -10,4 +12,21 @@ function generateHashtag (str) {
   }
 
   return result.join("");
+}
+
+// Stuhl
+
+function generateHashtag(str) {
+  
+  if (str.trim() === "") return false
+  
+  const result = str
+  .replace(/\s\s+/g, " ")
+  .split(" ")
+  .map((item, index) => item[0].toUpperCase() + item.slice(1))
+  .join("")
+  
+  if (result.length + 1 > 140) return false
+  
+  return "#" + result
 }
